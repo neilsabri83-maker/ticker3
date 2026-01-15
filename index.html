@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Ticker Salon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+    }
+
+    .ticker {
+      zoom: 2.8;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <div class="ticker">
+      <script src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js">
+      {
+        "symbols": [
+          { "proName": "NASDAQ:PLTR", "title": "PLTR" },
+          { "proName": "NYSE:XOM", "title": "XOM" },
+          { "proName": "EURONEXT:HO", "title": "HO" }
+        ],
+        "showSymbolLogo": true,
+        "showExchange": false,
+        "isTransparent": true,
+        "displayMode": "regular",
+        "colorTheme": "dark",
+        "locale": "fr"
+      }
+      </script>
+    </div>
+  </div>
+
+</body>
+</html>
