@@ -2,51 +2,60 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Actions en temps réel</title>
+  <title>Ticker Salon</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- OBLIGATOIRE POUR FULLSCREEN iPAD -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
   <style>
-    body {
+    html, body {
       margin: 0;
-      background-color: #0e1117;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      padding: 0;
+      background: black;
+      height: 100%;
+      overflow: hidden;
     }
 
-    .ticker-container {
+    .wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
       width: 100%;
-      max-width: 1200px;
+    }
+
+    .ticker {
+      width: 100%;
+      zoom: 4.8;
     }
   </style>
 </head>
 
 <body>
 
-<div class="ticker-container">
-  <div class="tradingview-widget-container">
-    <script
-      type="text/javascript"
-      src="https://s3.tradingview.com/external-embedding/embed-ticker-tape.js"
-      async>
-    {
-      "symbols": [
-        { "proName": "NYSE:PLTR", "title": "Palantir" },
-        { "proName": "NYSE:XOM", "title": "Exxon" },
-        { "proName": "NASDAQ:TSLA", "title": "Tesla" },
-        { "proName": "NASDAQ:NVDA", "title": "Nvidia" },
-        { "proName": "NYSE:CVX", "title": "Chevron" }
-      ],
-      "showSymbolLogo": true,
-      "isTransparent": false,
-      "displayMode": "adaptive",
-      "colorTheme": "dark",
-      "locale": "fr"
-    }
-    </script>
+  <div class="wrapper">
+    <div class="ticker">
+      <script src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js">
+      {
+        "symbols": [
+          { "proName": "NASDAQ:PLTR", "title": "PLTR" },
+          { "proName": "NYSE:XOM", "title": "XOM" },
+          { "proName": "NASDAQ:TSLA", "title": "TSLA" },
+          { "proName": "NASDAQ:NVDA", "title": "NVDA" },
+          { "proName": "NYSE:CVX", "title": "CVX" }
+        ],
+        "showSymbolLogo": true,
+        "showExchange": false,
+        "isTransparent": true,
+        "displayMode": "regular",
+        "colorTheme": "dark",
+        "locale": "fr"
+      }
+      </script>
+    </div>
   </div>
-</div>
 
 </body>
 </html>
